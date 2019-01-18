@@ -774,10 +774,10 @@ function startGame() {
     dealToTheDOM();
     var foundation = document.getElementsByClassName('foundation');
     $$('wastePile').innerHTML = '';
-    $$('foundationHeart').src = 'images/Heart.png';
-    $$('foundationClub').src = 'images/Club.png';
-    $$('foundationSpade').src = 'images/Spade.png';
-    $$('foundationDiamond').src = 'images/Diamond.png';
+    $$('foundationHeart').src = 'images/heart.png';
+    $$('foundationClub').src = 'images/club.png';
+    $$('foundationSpade').src = 'images/spade.png';
+    $$('foundationDiamond').src = 'images/diamond.png';
     addEventListener('touchstart', () => {
         sessionStorage.setItem('touchScreen', 'true');
         dealToTheDOM();
