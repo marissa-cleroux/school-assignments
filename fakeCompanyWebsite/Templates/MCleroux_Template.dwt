@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<!-- TemplateBeginEditable name="doctitle" -->
+	<title>Devil's Advocate</title>
+	<!-- TemplateEndEditable -->
+	<link rel="stylesheet" href="../styles/site.css" type="text/css"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link href="https://fonts.googleapis.com/css?family=Anaheim|Source+Code+Pro|Crushed|Megrim" rel="stylesheet"/>
+	<!-- TemplateBeginEditable name="head" -->
+	<!-- TemplateEndEditable -->
+</head>
+<body id="wrapper">
+
+<header>	
+	<nav>
+		<ul>
+			<li class="non-mobile"><a href="index.html">HOME</a></li>
+			<li><a href="aboutUs.html">ABOUT US</a></li>
+			<li class="non-mobile"><a href="aboutYouTestimonials.html">ABOUT YOU</a></li>
+			<li><a href="services.html">SERVICES</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+            <li class="non-mobile"><a href="hours.html">HOURS</a></li>
+             <li class="non-mobile"><a href="ourKin.html">LINKS</a></li>
+            
+		</ul>
+	</nav>
+	
+<div class="banner">	
+		
+		<a href="index.html"><img src="images/RedDevilLogo.png" id="devil" alt="Devil logo"/>
+		<h1>Devil's Advocate</h1></a>
+		
+		
+</div>
+
+<p>
+
+We're here to be the other side
+
+</p>
+</header>
+<!-- TemplateBeginEditable name="Main" -->
+<main> </main>
+<!-- TemplateEndEditable -->
+<footer>
+  <nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="aboutUs.html">ABOUT US</a></li>
+			<li><a href="aboutYouTestimonials.html">ABOUT YOU</a></li>
+			<li><a href="services.html">SERVICES</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+            <li><a href="hours.html">HOURS</a></li>
+            <li><a href="ourKin.html">OUR KIN</a></li>
+		</ul><br>
+  </nav>	
+	<!-- #BeginLibraryItem "/Library/Copyright.lbi" -->
+    <p id="copyright"> Copyright &copy; Devil's Advocate Inc. </p>
+  <!-- #EndLibraryItem -->
+  <!-- #BeginLibraryItem "/Library/Credit.lbi" -->
+	<div class="credit">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div class="credit">Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  <!-- #EndLibraryItem --></footer>
+</body>
+</html>
