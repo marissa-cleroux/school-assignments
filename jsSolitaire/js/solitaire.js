@@ -4,9 +4,11 @@
 // Different messages for quitting and losing
 // Optimize animations
 
-var $$ = function(id) { return document.getElementById(id) };
+var $$ = function (id) {
+    return document.getElementById(id)
+};
 
-function Card(_rank, _suit, _colour, _oneLower, _oneHigher){
+function Card(_rank, _suit, _colour, _oneLower, _oneHigher) {
     this.rank = _rank;
     this.suit = _suit;
     this.colour = _colour;
@@ -14,27 +16,27 @@ function Card(_rank, _suit, _colour, _oneLower, _oneHigher){
     this.oneHigher = _oneHigher;
     this.src = `images/cards/${this.suit}_${this.rank}.png`;
     this.id = `${this.suit}_${this.rank}`;
-    this.card = function() {
+    this.card = function () {
         return `${this.rank} of ${this.suit}s`;
     };
 }
 
-function Deck(){
+function Deck() {
     this.suit = ['Club', 'Spade', 'Heart', 'Diamond'];
     this.rank = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
     this.colour;
     this.deck = [];
-    this.createDeck = function() {
+    this.createDeck = function () {
         for (let k = 0; k < this.suit.length; k++) {
-            (this.suit[k] == 'Club' || this.suit[k] == 'Spade') ? this.colour = 'black' : this.colour = 'red';
+            (this.suit[k] == 'Club' || this.suit[k] == 'Spade') ? this.colour = 'black': this.colour = 'red';
             for (let j = 0; j < this.rank.length; j++) {
                 Card[j] = new Card(this.rank[j], this.suit[k], this.colour, (this.rank[j] == 'A') ? 'N/A' : this.rank[j - 1], (this.rank[j] == 'K') ? 'N/A' : this.rank[j + 1]);
                 this.deck.push(Card[j]);
             }
         }
     };
-    this.shuffle = function(){
-        for(let k = 0; k < 14; k++) {
+    this.shuffle = function () {
+        for (let k = 0; k < 14; k++) {
             for (let i = 0; i < this.deck.length; i++) {
                 let j = Math.floor(Math.random() * (i + 1));
                 let temp = this.deck[i];
@@ -42,48 +44,48 @@ function Deck(){
                 this.deck[j] = temp
             }
         }
-    };//fischer-yates shuffle
+    }; //fischer-yates shuffle
 
     this.location = 0;
-    this.deal = function(){
-        for(let i = 0; i < 7; i++) {
-            if(i < 1) {
+    this.deal = function () {
+        for (let i = 0; i < 7; i++) {
+            if (i < 1) {
                 gameTableau.colOne.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 2) {
+            if (i < 2) {
                 gameTableau.colTwo.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 3) {
+            if (i < 3) {
                 gameTableau.colThree.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 4) {
+            if (i < 4) {
                 gameTableau.colFour.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 5) {
+            if (i < 5) {
                 gameTableau.colFive.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 6){
+            if (i < 6) {
                 gameTableau.colSix.push(this.deck[this.location]);
                 this.location++;
             }
-            if(i < 7) {
+            if (i < 7) {
                 gameTableau.colSeven.push(this.deck[this.location]);
                 this.location++;
             }
         }
-        for(this.location; this.location < 52; this.location++) {
+        for (this.location; this.location < 52; this.location++) {
             gameStock.pile.push(this.deck[this.location]);
         }
         // deals iterating through each columns and prevented from adding more than the required cards to each column
     };
 } // Creates a deck of card object by looping through all the ranks and suits
 
-function Tableau(){
+function Tableau() {
     this.colOne = [];
     this.colTwo = [];
     this.colThree = [];
@@ -92,7 +94,7 @@ function Tableau(){
     this.colSix = [];
     this.colSeven = [];
     this.theTableau = [this.colOne, this.colTwo, this.colThree, this.colFour, this.colFive, this.colSix, this.colSeven];
-    this.createFaceUp = function(){
+    this.createFaceUp = function () {
         this.colOne.push(new Array(this.colOne.pop()));
         this.colTwo.push(new Array(this.colTwo.pop()));
         this.colThree.push(new Array(this.colThree.pop()));
@@ -115,9 +117,8 @@ function Tableau(){
             if (this.canPlay[i].length == 0) {
                 if (this.theTableau[i].length == 1) {
                     this.canPlay[i] = ['Empty'];
-                    console.log(`updating playing cards for col: ${i + 1} it is now empty`,this.canPlay[i]);
-                }
-                else {
+                    console.log(`updating playing cards for col: ${i + 1} it is now empty`, this.canPlay[i]);
+                } else {
                     this.canPlay[i].push(this.theTableau[i][this.theTableau[i].length - 2]);
                     this.theTableau[i].splice(this.theTableau[i].length - 2, 1);
                     console.log(`Updating playing for col ${i + 1}`, this.canPlay[i]);
@@ -125,10 +126,10 @@ function Tableau(){
             }
         }
     } // Updates the playing cards by looping through each column and checking if there is a card 'flipped' if not it flips one
-      // If there is nothing under it will set the column as 'Empty'
+    // If there is nothing under it will set the column as 'Empty'
 }
 
-function Foundation(){
+function Foundation() {
     this.hearts = ['Heart'];
     this.clubs = ['Club'];
     this.spades = ['Spade'];
@@ -136,22 +137,20 @@ function Foundation(){
     this.onFoundation = [this.hearts, this.clubs, this.diamonds, this.spades];
 }
 
-function Stock(){
+function Stock() {
     this.pile = [];
-    this.draw = function(){
-        if(this.pile.length >= 3) {
-            for (let i = 0; i < 3; i++){
+    this.draw = function () {
+        if (this.pile.length >= 3) {
+            for (let i = 0; i < 3; i++) {
                 gameWaste.pile.push(this.pile.pop());
             }
             return -1;
-        }
-        else if(this.pile.length == 2) {
+        } else if (this.pile.length == 2) {
             for (let i = 0; i < 2; i++) {
                 gameWaste.pile.push(this.pile.pop());
             }
             return -2;
-        }
-        else if(this.pile.length == 1) {
+        } else if (this.pile.length == 1) {
             gameWaste.pile.push(this.pile.pop());
             return -3;
         }
@@ -166,7 +165,7 @@ function Waste() {
 function moveCard(numberOfCards, from, to) {
 
     var moving = [];
-    if (from == gameWaste.pile && numberOfCards > 1){
+    if (from == gameWaste.pile && numberOfCards > 1) {
         return -1;
     } // allows only one card to be played from the waste pile
 
@@ -178,7 +177,7 @@ function moveCard(numberOfCards, from, to) {
         return -1;
     }
     console.log(`You are moving:`);
-    for(let i = 0; i < moving.length; i++){
+    for (let i = 0; i < moving.length; i++) {
         console.log(moving[i].card());
     }
 
@@ -189,14 +188,14 @@ function moveCard(numberOfCards, from, to) {
         }
     }
 
-    for(let i = 0; i < gameTableau.canPlay.length; i++) {
+    for (let i = 0; i < gameTableau.canPlay.length; i++) {
         if (to == gameTableau.canPlay[i] && validPlayOnTableau(moving, to, from, numberOfCards)) {
             playOnTableau(moving, to, from, numberOfCards);
             return 1;
         }
     }
 
-    for(let i = 0; i < numberOfCards; i++){
+    for (let i = 0; i < numberOfCards; i++) {
         from.push(moving.shift());
     }
     console.error('Invalid move! Try a different move.');
@@ -204,21 +203,21 @@ function moveCard(numberOfCards, from, to) {
     // If it didn't qualify for the previous ifs, the cards and re-added back to the place of origin and an error is returned
 }
 
-function validPlayOnFoundation(card, destination){
-    if(card.length > 1)
+function validPlayOnFoundation(card, destination) {
+    if (card.length > 1)
         return false;
-    if(card.rank == 'A'){
-        for(let i = 0; i < 4; i++){
-            if(destination == gameFoundation.onFoundation[i] && gameFoundation.onFoundation[i] == card.suit){
+    if (card.rank == 'A') {
+        for (let i = 0; i < 4; i++) {
+            if (destination == gameFoundation.onFoundation[i] && gameFoundation.onFoundation[i] == card.suit) {
                 return true;
             }
         }
-    } else if(destination == 'Heart' || destination == 'Club' || destination == 'Diamond' || destination == 'Spade'){
+    } else if (destination == 'Heart' || destination == 'Club' || destination == 'Diamond' || destination == 'Spade') {
         return false;
     }
 
-    for (let  i = 0; i < gameFoundation.onFoundation.length; i++){
-        if(destination == gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1] &&
+    for (let i = 0; i < gameFoundation.onFoundation.length; i++) {
+        if (destination == gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1] &&
             gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1].rank == card.oneLower &&
             gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1].suit == card.suit) {
             //console.log('Not ace valid play on to foundation');
@@ -229,34 +228,30 @@ function validPlayOnFoundation(card, destination){
 } // validates plays on the foundation according to the rules provided in assignment 1
 
 
-function playOnFoundation(cards, destination){
+function playOnFoundation(cards, destination) {
 
-    for(let i = 0; i < gameFoundation.onFoundation.length; i++){
+    for (let i = 0; i < gameFoundation.onFoundation.length; i++) {
         if (destination == gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1] &&
             validPlayOnFoundation(cards, gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1]))
             gameFoundation.onFoundation[i].push(cards);
     }
 }
 
-function validPlayOnTableau(moving, to, from, numberOfCards){
+function validPlayOnTableau(moving, to, from, numberOfCards) {
     if (to == 'Empty') {
         if (moving[0].rank == 'K') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
-    }
-    else if(to[to.length - 1].rank == moving[0].oneHigher && to[to.length - 1].colour != moving[0].colour){
+    } else if (to[to.length - 1].rank == moving[0].oneHigher && to[to.length - 1].colour != moving[0].colour) {
         return true;
-    }
-
-    else{
+    } else {
         return false;
     }
-}// validates plays on the tableau according to the rules provided in assignment 1
+} // validates plays on the tableau according to the rules provided in assignment 1
 
-function playOnTableau(moving, to, from, numberOfCards){
+function playOnTableau(moving, to, from, numberOfCards) {
 
     if (to == 'Empty') {
         for (let i = 0; i < numberOfCards; i++)
@@ -271,7 +266,7 @@ function playOnTableau(moving, to, from, numberOfCards){
     return true;
 }
 
-function lose(){
+function lose() {
     endingAnimate();
     setTimeout(loseAnimate, 1000);
     $$('aMessage').textContent = `There are no more moves! Please click to play again`;
@@ -280,22 +275,22 @@ function lose(){
 }
 
 
-function win(){
+function win() {
     $$('newGame').style.display = 'none';
     $$('aMessage').textContent = `You won!`;
-    $$('winnings').style.left = innerWidth/4 + 'px';
+    $$('winnings').style.left = innerWidth / 4 + 'px';
     $$('quit').style.display = 'inline';
     endingAnimate();
     shootingStar();
 } // Displays the message that they won, adds money to their bank roll and allows them to play again
 
-function checkForWin(){
+function checkForWin() {
     var count = 0;
     const CARDS_IN_FULL_FOUNDATION = 13;
     for (let i = 0; i < gameFoundation.onFoundation.length; i++) {
-        (gameFoundation.onFoundation[i].length != CARDS_IN_FULL_FOUNDATION) ? count = 0 : count++;
+        (gameFoundation.onFoundation[i].length != CARDS_IN_FULL_FOUNDATION) ? count = 0: count++;
     }
-    if(count == gameFoundation.onFoundation.length && gameStock.pile.length == 0){
+    if (count == gameFoundation.onFoundation.length && gameStock.pile.length == 0) {
         win();
         return true;
     }
@@ -303,25 +298,25 @@ function checkForWin(){
 } // checks if the player won by counting how many cards are in the draw pile and the foundation
 // can test by uncomment script and input tag game.html
 
-function Count(){
+function Count() {
     this.count = 0;
 } // A count to keep track of valid moves from the waste pile
 
-function wastePileValidMove(){
+function wastePileValidMove() {
 
     if (gameWaste.pile.length == 0)
         return false;
     var onWastePile = [gameWaste.pile[gameWaste.pile.length - 1]];
 
-    for(let i = 0; i < gameTableau.canPlay.length; i++){
-        if(validPlayOnTableau(onWastePile, gameTableau.canPlay[i], gameWaste.pile, 1)) {
+    for (let i = 0; i < gameTableau.canPlay.length; i++) {
+        if (validPlayOnTableau(onWastePile, gameTableau.canPlay[i], gameWaste.pile, 1)) {
             //console.log('Valid play from waste pile');
             return validPlayCount.count = 0;
         }
     } // Checks for valid moves from the waste pile to the tableau by looping through the values of the cards;
-      // if there is one it resets the count back to zero so that the game will not set of the lose()
+    // if there is one it resets the count back to zero so that the game will not set of the lose()
 
-    for(let i = 0; i < gameFoundation.onFoundation.length; i++){
+    for (let i = 0; i < gameFoundation.onFoundation.length; i++) {
         if (validPlayOnFoundation(onWastePile[0], gameFoundation.onFoundation[i][gameFoundation.onFoundation[i].length - 1]) ||
             onWastePile.rank == 'A') {
             //console.log('Valid play from waste pile on foundation');
@@ -334,12 +329,13 @@ function wastePileValidMove(){
     // Adds one to the count if no valid plays were found
 
 }
+
 function checkForLose() {
     for (let i = 0; i < gameTableau.canPlay.length; i++) {
-        for (let j = 0; j < gameTableau.canPlay.length; j ++){
-            if(i !== j){
+        for (let j = 0; j < gameTableau.canPlay.length; j++) {
+            if (i !== j) {
                 if (validPlayOnTableau(gameTableau.canPlay[i], gameTableau.canPlay[j], gameTableau.canPlay[i], gameTableau.canPlay[i].length)) {
-                    if(gameTableau.theTableau[i].length == 1 && gameTableau.canPlay[i][0].rank == 'K')
+                    if (gameTableau.theTableau[i].length == 1 && gameTableau.canPlay[i][0].rank == 'K')
                         break;
                     //console.log(`valid move from tableau to tableau`);
                     validPlayCount.count = 0;
@@ -347,10 +343,10 @@ function checkForLose() {
                 }
             }
         }
-    }// Checks for valid plays from the tableau to the tableau by looping through the cards and comparing, if there are it sets the count back to 0
+    } // Checks for valid plays from the tableau to the tableau by looping through the cards and comparing, if there are it sets the count back to 0
 
-    for(let i = 0; i < gameTableau.canPlay.length; i++) {
-        for(let j = 0; j < gameFoundation.onFoundation.length; j++) {
+    for (let i = 0; i < gameTableau.canPlay.length; i++) {
+        for (let j = 0; j < gameFoundation.onFoundation.length; j++) {
             try {
                 if (validPlayOnFoundation(gameTableau.canPlay[i][gameTableau.canPlay[i].length - 1], gameFoundation.onFoundation[j][gameFoundation.onFoundation[j].length - 1]) ||
                     gameTableau.canPlay[i][gameTableau.canPlay[i].length - 1].rank == 'A') {
@@ -358,91 +354,88 @@ function checkForLose() {
                     validPlayCount.count = 0;
                     return false;
                 }
-            }
-            catch (err){
+            } catch (err) {
                 console.log('Invalid move');
             }
         }
     } // Checks for valid plays from the tableau to the foundation if there are it sets the count back to 0
 
-    if(validPlayCount.count <= 8){ //8 being the standard full stock pile length iterations
+    if (validPlayCount.count <= 8) { //8 being the standard full stock pile length iterations
         return false;
     } // Checks that there has not been any valid plays for at least eight iterations drawing from the waste pile
 
     lose();
 }
 
-function quit(){
+function quit() {
     var cardsOnFoundation = 0;
     var payOut = 0;
 
-    for(let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         if (gameFoundation.onFoundation[i] == 'Heart' || gameFoundation.onFoundation[i] == 'Diamond' || gameFoundation.onFoundation[i] == 'Club' || gameFoundation.onFoundation[i] == 'Spade') {
             cardsOnFoundation;
-        }
-        else
+        } else
             cardsOnFoundation += gameFoundation.onFoundation[i].length;
     }
 
-    if(cardsOnFoundation > 0){
+    if (cardsOnFoundation > 0) {
         payOut += cardsOnFoundation * 5 - (gameBet.betAmt);
         return payOut;
-    }
-    else{
+    } else {
         return gameBet.betAmt * -1;
     }
 
 } // calculates players pay out dependent on the cards on the foundation, using scheme suggested in assignment 1
 
-function shakeLeft(wrongCard){
+function shakeLeft(wrongCard) {
     try {
-    $$(wrongCard).style.transform = 'rotate(-25deg)';
-    } catch(err){
+        $$(wrongCard).style.transform = 'rotate(-25deg)';
+    } catch (err) {
         console.log('Technical difficulty with drag and drop');
     }
 }
 
-function shakeRight(wrongCard){
+function shakeRight(wrongCard) {
     try {
-    $$(wrongCard).style.transform = 'rotate(25deg)';
-    } catch(err){
+        $$(wrongCard).style.transform = 'rotate(25deg)';
+    } catch (err) {
         console.log('Technical difficulty with drag and drop');
     }
 }
 
-function shakeDone(wrongCard){
+function shakeDone(wrongCard) {
     try {
-    $$(wrongCard).style.transform = 'rotate(0deg)';
-    } catch(err){
+        $$(wrongCard).style.transform = 'rotate(0deg)';
+    } catch (err) {
         console.log('Technical difficulty with drag and drop');
     }
 } // handles error that occurs when a user tries to play a card but does not place it fully on the destination
 
-function shakeCard(wrongCard){
-        setTimeout(function () {
-            shakeLeft(wrongCard)
-        }, 100);
-        setTimeout(function () {
-            shakeRight(wrongCard)
-        }, 200);
-        setTimeout(function () {
-            shakeLeft(wrongCard)
-        }, 300);
-        setTimeout(function () {
-            shakeRight(wrongCard)
-        }, 400);
-        setTimeout(function () {
-            shakeDone(wrongCard)
-        }, 500);
+function shakeCard(wrongCard) {
+    setTimeout(function () {
+        shakeLeft(wrongCard)
+    }, 100);
+    setTimeout(function () {
+        shakeRight(wrongCard)
+    }, 200);
+    setTimeout(function () {
+        shakeLeft(wrongCard)
+    }, 300);
+    setTimeout(function () {
+        shakeRight(wrongCard)
+    }, 400);
+    setTimeout(function () {
+        shakeDone(wrongCard)
+    }, 500);
 } // animates a card when the user tries to make an invalid move
 
-function getRandomPos(maxBounds){
+function getRandomPos(maxBounds) {
     var randomPos = Math.floor(Math.random() * maxBounds);
     return randomPos;
 }
 
-function sparkle(img, posLeft, posTop, time){
-    setTimeout(() =>{
+function sparkle(img, posLeft, posTop, time) {
+    setTimeout(() => {
         $$('row-foundation').appendChild(img);
         img.style.position = 'absolute';
         img.style.left = posLeft + 'px';
@@ -454,14 +447,14 @@ function sparkle(img, posLeft, posTop, time){
 
 
 
-function removeSparkle(img, time){
-    setTimeout(()=> {
+function removeSparkle(img, time) {
+    setTimeout(() => {
         $$('row-foundation').removeChild($$(img));
     }, time);
 
 }
 
-function shootingStar(){
+function shootingStar() {
     let img = new Image();
     img.src = `images/Shooting_Star${0}.png`;
     $$('tableau').appendChild(img);
@@ -469,8 +462,8 @@ function shootingStar(){
     let bottomPos = 0;
     let leftPos = innerWidth + 97;
 
-    var shot = setInterval(() =>{
-        (bottomPos < innerHeight) ? bottomPos += 25 : clearInterval(shot);
+    var shot = setInterval(() => {
+        (bottomPos < innerHeight) ? bottomPos += 25: clearInterval(shot);
         leftPos -= 25;
         img.style.bottom = bottomPos + 'px';
         img.style.left = leftPos + 'px';
@@ -498,14 +491,14 @@ function foundationAnimation() {
         sparkle(img, tempLeft, tempTop, time);
     }
 
-    for(let i=0; i < 4; i++){
+    for (let i = 0; i < 4; i++) {
         time += 700;
         removeSparkle(`tempSparkle${i}`, time);
     }
 } // Animates when the user plays on the foundation
 
 
-function findCard(first, second){
+function findCard(first, second) {
     let from = undefined;
     let to = undefined;
     var columns = {
@@ -517,20 +510,19 @@ function findCard(first, second){
         'columnSix': gameTableau.canPlay[5],
         'columnSeven': gameTableau.canPlay[6],
     };
-    for(let i = 0; i < gameTableau.canPlay.length; i++){
-        for(let j = 0; j < gameTableau.canPlay[i].length; j++){
-            if(gameTableau.canPlay[i][j].id == first){
+    for (let i = 0; i < gameTableau.canPlay.length; i++) {
+        for (let j = 0; j < gameTableau.canPlay[i].length; j++) {
+            if (gameTableau.canPlay[i][j].id == first) {
                 from = gameTableau.canPlay[i];
                 var numberOfCards = gameTableau.canPlay[i].length - j;
-            }
-            else if(gameTableau.canPlay[i][j].id == second){
+            } else if (gameTableau.canPlay[i][j].id == second) {
                 to = gameTableau.canPlay[i];
             }
         }
     }
 
 
-    if(from == undefined){
+    if (from == undefined) {
         from = gameWaste.pile;
         numberOfCards = 1;
     }
@@ -544,28 +536,28 @@ function findCard(first, second){
     };
 
 
-    if(to == undefined) {
+    if (to == undefined) {
         for (let i = 0; i < gameFoundation.onFoundation.length; i++) {
-            if (second == 'foundationHeart' || second == 'foundationClub' || second == 'foundationDiamond' || second == 'foundationSpade'){
+            if (second == 'foundationHeart' || second == 'foundationClub' || second == 'foundationDiamond' || second == 'foundationSpade') {
                 to = foundationPlace[second];
             }
         }
     }
 
-    if(to == undefined){
+    if (to == undefined) {
         to = columns[second];
     }
 
     return [numberOfCards, from, to];
 } // connects the DOM to the game logic by searching for the card in the logic so that the game can validate the users move
 
-function moveCardOnDOM(first, second){
+function moveCardOnDOM(first, second) {
     var moveCardValue = 0;
 
     let fromTo = findCard(first, second);
 
     moveCardValue = moveCard(fromTo[0], fromTo[1], fromTo[2]);
-    switch(moveCardValue) {
+    switch (moveCardValue) {
         case -1:
             if (fromTo[1] == gameWaste.pile)
                 shakeCard($$('wastePile').lastChild.id);
@@ -583,22 +575,22 @@ function moveCardOnDOM(first, second){
 
 }
 
-function setLeftPosition(img, i){
-    if(innerWidth < 340)
+function setLeftPosition(img, i) {
+    if (innerWidth < 340)
         img.style.left = i * 40 + 'px';
-    else if(innerWidth < 555)
+    else if (innerWidth < 555)
         img.style.left = i * 50 + 'px';
-    else if(innerWidth < 768)
+    else if (innerWidth < 768)
         img.style.left = i * 75 + 'px';
-    else if(innerWidth < 1068)
+    else if (innerWidth < 1068)
         img.style.left = i * 100 + 'px';
     else
         img.style.left = i * 150 + 'px';
 }
 
-function setLeftPositionWP(img, i){
+function setLeftPositionWP(img, i) {
 
-    switch(i) {
+    switch (i) {
         case 0:
             img.style.left = 22 + 'vw';
             break;
@@ -631,8 +623,7 @@ function dealToTheDOM() {
             columns[i].appendChild(img);
             img.id = columns[i].id;
             setLeftPosition(img, i);
-        }
-        else if (gameTableau.theTableau[i].length > 1) {
+        } else if (gameTableau.theTableau[i].length > 1) {
             for (let unflippedCard = 0; unflippedCard < gameTableau.theTableau[i].length; unflippedCard++) {
                 let img = new Image();
                 img.src = 'images/cards/BackgroundBlack.png';
@@ -694,7 +685,7 @@ function dealToTheDOM() {
     }
 
     if (gameWaste.pile.length > 0) {
-     $$('wastePile').lastChild.classList.add('flippedCard');
+        $$('wastePile').lastChild.classList.add('flippedCard');
     }
 
     var foundation = document.getElementsByClassName('foundation');
@@ -705,25 +696,24 @@ function dealToTheDOM() {
         }
 
 
-    if(!sessionStorage.getItem('touchScreen'))// add event handlers depending on if the user has a touch screen or not
+    if (!sessionStorage.getItem('touchScreen')) // add event handlers depending on if the user has a touch screen or not
     {
         addDraggableDroppable();
-    }
-    else {
+    } else {
         addClickAndDrop();
     }
 
-}// deals to the DOM using various positioning techniques to display the game in the typical solitaire fashion
+} // deals to the DOM using various positioning techniques to display the game in the typical solitaire fashion
 
 $$('stockPile').addEventListener('click', () => {
 
     let drawn = gameStock.draw();
-    if(drawn == -1){
+    if (drawn == -1) {
         dealToTheDOM();
         wastePileValidMove();
         checkForLose(validPlayCount.count);
 
-    } else if(drawn < -1){
+    } else if (drawn < -1) {
         $$('stockPile').src = 'images/cards/blank.png';
         dealToTheDOM();
         wastePileValidMove();
@@ -743,12 +733,12 @@ $$('quit').addEventListener('click', () => {
     $$('playAgain').style.display = 'none';
 });
 
-function preStart(){
-        $$('newGame').style.display = 'none';
-        $$('quit').style.display = 'none';
-        $$('playing').style.display = 'none';
-        $$('endGame').style.display = 'none';
-        startGame();
+function preStart() {
+    $$('newGame').style.display = 'none';
+    $$('quit').style.display = 'none';
+    $$('playing').style.display = 'none';
+    $$('endGame').style.display = 'none';
+    startGame();
 }
 
 
@@ -756,7 +746,7 @@ $$('playAgain').addEventListener('click', preStart);
 $$('newGame').addEventListener('click', lose);
 
 
-function startGame(){
+function startGame() {
 
     const A_GOOD_SHUFFLE = 8;
     $$('endGame').style.display = 'none';
@@ -773,7 +763,7 @@ function startGame(){
     gameWaste = new Waste();
     gameDeck.createDeck();
 
-    for(let i = 0; i < A_GOOD_SHUFFLE; i++){
+    for (let i = 0; i < A_GOOD_SHUFFLE; i++) {
         gameDeck.shuffle();
     }
 
@@ -788,38 +778,37 @@ function startGame(){
     $$('foundationClub').src = 'images/Club.png';
     $$('foundationSpade').src = 'images/Spade.png';
     $$('foundationDiamond').src = 'images/Diamond.png';
-    addEventListener('touchstart', ()=>{
-	    sessionStorage.setItem('touchScreen', 'true');
-	    dealToTheDOM();
+    addEventListener('touchstart', () => {
+        sessionStorage.setItem('touchScreen', 'true');
+        dealToTheDOM();
     });
     addEventListener('resize', dealToTheDOM);
-	firstClick = false;
+    firstClick = false;
     firstTarget = undefined;
     secondTarget = undefined;
 }
 
 addEventListener('load', preStart);
 
-addEventListener('error', function(){
+addEventListener('error', function () {
     $$('error').textContent = 'Sorry there has been an unexpected error, a new game will be started';
-    setTimeout(()=>location.href = 'intro.html', 5000);
+    setTimeout(() => location.href = 'intro.html', 5000);
 });
 
 var firstClick = false;
 var firstTarget = undefined;
 var secondTarget = undefined;
 
-function addClickAndDrop(){
+function addClickAndDrop() {
 
     $('h2').append('<span id=version>');
     $('#version').text('*Click and drop version');
-    $$('row-bottom').addEventListener('click', function(e){
-        if(!firstClick && e.target.classList.contains('flippedCard') && !e.target.classList.contains('emptySpot') && secondTarget != e.target) {
+    $$('row-bottom').addEventListener('click', function (e) {
+        if (!firstClick && e.target.classList.contains('flippedCard') && !e.target.classList.contains('emptySpot') && secondTarget != e.target) {
             firstClick = true;
             firstTarget = e.target;
             e.target.style.border = 'solid 3px #008080'
-        }
-        else if(e.target.tagName == 'IMG' && firstClick && firstTarget != e.target && !e.target.classList.contains('unflippedCard')) {
+        } else if (e.target.tagName == 'IMG' && firstClick && firstTarget != e.target && !e.target.classList.contains('unflippedCard')) {
             secondTarget = e.target;
             moveCardOnDOM(firstTarget.id, secondTarget.id);
             firstTarget.style.border = '0';
@@ -842,16 +831,15 @@ function addClickAndDrop(){
                 firstClick = true;
                 firstTarget = e.target;
                 e.target.style.border = 'solid 3px #008080';
-            }
-            else if (e.target.tagName == 'IMG' && firstClick) {
+            } else if (e.target.tagName == 'IMG' && firstClick) {
                 firstTarget.style.border = '0';
                 firstClick = false;
                 firstTarget = undefined;
             }
         }, true);
 
-    $$('row-foundation').addEventListener('click', function(e){
-        if(e.target.tagName == 'IMG' && firstClick && firstTarget != e.target){
+    $$('row-foundation').addEventListener('click', function (e) {
+        if (e.target.tagName == 'IMG' && firstClick && firstTarget != e.target) {
             secondTarget = e.target;
             moveCardOnDOM(firstTarget.id, secondTarget.id, e.target.id);
             firstTarget.style.border = '0';
@@ -866,14 +854,16 @@ function addClickAndDrop(){
     });
 }
 
-function endingAnimate(){
-    $('#playing').slideUp('slow', function(){$('#endGame').add('#playAgain').slideDown('slow')});
+function endingAnimate() {
+    $('#playing').slideUp('slow', function () {
+        $('#endGame').add('#playAgain').slideDown('slow')
+    });
 }
 
-function loseAnimate(){
+function loseAnimate() {
     let NUMDROPS = 50;
     let rainDrops = new Array(NUMDROPS);
-    for(let i = 0; i < NUMDROPS; i++){
+    for (let i = 0; i < NUMDROPS; i++) {
         let img = new Image();
         img.src = 'images/drop.png';
         img.style.position = 'absolute';
@@ -886,25 +876,27 @@ function loseAnimate(){
     }
     let time = 0;
 
-    for(let i =0; i < NUMDROPS; i++){
-        setTimeout(function(){
+    for (let i = 0; i < NUMDROPS; i++) {
+        setTimeout(function () {
             dropFalling(i, rainDrops[i])
         }, time += (2 * i));
     }
 
-    for(let i =0; i < NUMDROPS; i++) {
+    for (let i = 0; i < NUMDROPS; i++) {
         $(`#drop${i}`).remove();
     }
 
 } // display rain drops when quitting, ending, or new game (anything except win)
 
 
-function dropFalling(num, img){
+function dropFalling(num, img) {
     $('body').prepend(img);
-    $(`#drop${num}`).animate({"top": "100vh"}, 1000);
+    $(`#drop${num}`).animate({
+        "top": "100vh"
+    }, 1000);
 }
 
-function addDraggableDroppable(){
+function addDraggableDroppable() {
     $('h2').append('<span id=version>');
     $('#version').text('*Drag and drop version');
 
@@ -915,15 +907,15 @@ function addDraggableDroppable(){
 
     $('.emptySpot').droppable({
         tolerance: 'touch',
-        drop: function(e, ui){
+        drop: function (e, ui) {
             moveCardOnDOM(ui.draggable.attr('id'), $(this).attr('id'));
         }
     });
 
     $('.flippedCard').droppable({
         tolerance: 'touch',
-        drop: function(e, ui){
-            if(ui.draggable.parent().attr('id') == $(this).parent().attr('id'))
+        drop: function (e, ui) {
+            if (ui.draggable.parent().attr('id') == $(this).parent().attr('id'))
                 e.revert = true;
             else
                 moveCardOnDOM(ui.draggable.attr('id'), $(this).attr('id'));
@@ -933,7 +925,7 @@ function addDraggableDroppable(){
     $('.foundation').droppable({
         tolerance: 'touch',
         greedy: true,
-        drop: function(e, ui){
+        drop: function (e, ui) {
             moveCardOnDOM(ui.draggable.attr('id'), $(this).attr('id'));
         }
     })
