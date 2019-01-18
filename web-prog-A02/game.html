@@ -1,5 +1,3 @@
-<!-- Uncomment line 34 amd line 80 to test win-->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,28 +26,17 @@
                 <h3>Enjoy your alone time with some solitaire</h3>
                 <input type="button" name="newGame" id="newGame" value="NEW GAME" class="btn gameBtn">
                 <input type="button" name="quit" id="quit" value="QUIT" class="btn gameBtn">
-                <div id="error" class="errorTxt"></div>
-                <form id="betForm">
-                    <div id="betError"></div>
-                    <p>Please enter a multiple of 52</p>
-                    <label class="lbl">Bet Amount:</label>
-                    <div id="betSlider"></div>
-                    <div id="moneyAmt"></div>
-                    <br/>
-                    <input type="button" name="placeBet" id="placeBet" value="Play Sturmfrei" class="btn">
-                </form>
                 <div id="playing">
-                    <!--<input type="button" name="testWin" id="testWin" value="win" class="btn">-->
                     <div id="row-top">
 
                         <img src="images/cards/BackgroundBlack.png" class="card" id="stockPile">
                         <div id="wastePile" class="card"></div>
 
                         <div id="row-foundation">
-                            <img src="images/heart.png" id="foundationHeart" class="foundation card" alt="Playing card">
-                            <img src="images/club.png" id="foundationClub" class="foundation card" alt="Playing card">
-                            <img src="images/diamond.png" id="foundationDiamond" class="foundation card" alt="Playing card">
-                            <img src="images/spade.png" id="foundationSpade" class="foundation card" alt="Playing card">
+                            <img src="images/Heart.png" id="foundationHeart" class="foundation card" alt="Playing card">
+                            <img src="images/Club.png" id="foundationClub" class="foundation card" alt="Playing card">
+                            <img src="images/Diamond.png" id="foundationDiamond" class="foundation card" alt="Playing card">
+                            <img src="images/Spade.png" id="foundationSpade" class="foundation card" alt="Playing card">
                         </div>
                     </div>
                     <div>
@@ -71,37 +58,32 @@
             </div>
         </main>
         <footer>
-            <div id="about">
-                <h4 id="userInfoTitle"> PLAYER INFORMATION: </h4>
-                <div id="userInformation" class="text-center">
-                </div>
-                <div>
-                    <p>
-                        <a id="changeCredentials" href="intro.html"> Change your credentials</a>
-                    </p>
-                </div>
-                <div id="credit">Sparkle and raindrop icons made by
-                    <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
-                    <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-                    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                        target="_blank">CC 3.0 BY</a>
-                </div>
-                <div>Shooting star icons made by
-                    <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-                    <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-                    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                        target="_blank">CC 3.0 BY</a>
-                </div>
+            <!--<div id="about">
+              <h4 id="userInfoTitle"> PLAYER INFORMATION: </h4>
+              <div id="userInformation" class="text-center">
+              </div>
+              <div><p><a id="changeCredentials" href="intro.html"> Change your credentials</a></p></div>-->
+            <div id="credit">Sparkle and raindrop icons made by
+                <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                    target="_blank">CC 3.0 BY</a>
             </div>
+            <div>Shooting star icons made by
+                <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                    target="_blank">CC 3.0 BY</a>
+            </div>
+            <!--</div>-->
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
         </script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
         crossorigin="anonymous"></script>
     <script src="js/solitaire.js"></script>
-    <!--<script src="js/testWin.js"></script>-->
 
 </body>
 
