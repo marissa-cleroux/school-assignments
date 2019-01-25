@@ -7,7 +7,7 @@ Completed in Web Programming III. PHP task manager, node.js task viewer. Node se
 ### [nodeServer](https://mcleroux-node-server.herokuapp.com)
 Completed in Web Programming III. Node server "from scratch." Handling all requests without the use of frameworks that streamline the process. Uses templating (pug). Searches XML/JSON and returns matching records.
 
-### [warCommandLine] (https://github.com/marissa-cleroux/war-card-game/tree/master/src/war)
+### [warCommandLine](https://github.com/marissa-cleroux/war-card-game/tree/master/src/war)
 Completed in Programming III. Tasked to create a command line war card game using data structures and proper unit testing.
 
 ### [jsSolitaire](https://marissa-cleroux.github.io/school-assignments/jsSolitaire/game.html)
