@@ -5,7 +5,10 @@ _Assignments I have completed in the Computer Science program at Heritage Colleg
 Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch."
 
 ### [nodeServer](https://mcleroux-node-server.herokuapp.com)
-Completed in -Web Programming III. Node server "from scratch." Handling all requests without the use of frameworks that streamline the process. Uses templating (pug). Searches XML/JSON and returns matching records.
+Completed in Web Programming III. Node server "from scratch." Handling all requests without the use of frameworks that streamline the process. Uses templating (pug). Searches XML/JSON and returns matching records.
+
+### [warCommandLine] (https://github.com/marissa-cleroux/war-card-game/tree/master/src/war)
+Completed in Programming III. Tasked to create a command line war card game using data structures and proper unit testing.
 
 ### [jsSolitaire](https://marissa-cleroux.github.io/school-assignments/jsSolitaire/game.html)
 Completed in Web Programming II. Solitaire made using javaScript; there is more to it but I have to adapt it to github.
