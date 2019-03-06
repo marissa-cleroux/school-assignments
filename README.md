@@ -1,6 +1,9 @@
 # School Assignments
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
+### [toDoCommandLine](https://github.com/marissa-cleroux/command-line-to-do-list)
+Completed in Programming IV. Created a command line task list using python.
+
 ### [kanbanTaskManager](https://kanban-task-manager.herokuapp.com/)
 Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch."
 
