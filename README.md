@@ -16,6 +16,9 @@ Completed in Programming III. Tasked to create a command line war card game usin
 ### [jsSolitaire](https://marissa-cleroux.github.io/school-assignments/jsSolitaire/game.html)
 Completed in Web Programming II. Solitaire made using javaScript; there is more to it but I have to adapt it to github.
 
+### [connectN](https://github.com/marissa-cleroux/connectN)
+Completed in Programming II. Connect-N made using Java with CLI and GUI. 
+
 ### [fakeCompanyWebsite](https://marissa-cleroux.github.io/school-assignments/fakeCompanyWebsite/index.html)
 Completed in Web Programming I. Static website for a fake company - first website I ever made!
 
