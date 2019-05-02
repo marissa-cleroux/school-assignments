@@ -1,13 +1,13 @@
 # School Assignments
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
-### [cryptogram](https://github.com/marissa-cleroux/cryptogram)
+### cryptogram [Demo](https://mc-cryptogram.herokuapp.com/)[Github](https://github.com/marissa-cleroux/cryptogram) 
 Completed in Programming IV. Create a cryptogram game using python, web scraping, and bottle.
 
-### [toDoCommandLine](https://github.com/marissa-cleroux/commandLineToDoList)
+### toDoCommandLine [Github](https://github.com/marissa-cleroux/commandLineToDoList)
 Completed in Programming IV. Created a command line task list using python.
 
-### [kanbanTaskManager](https://kanban-task-manager.herokuapp.com/)
+### kanbanTaskManager [Demo](https://kanban-task-manager.herokuapp.com/) [Github - Node](https://github.com/marissa-cleroux/kanbanTaskManagerNode) 
 Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch."
 
 ### [warCommandLine](https://github.com/marissa-cleroux/warCardGame/tree/master/src/war)
