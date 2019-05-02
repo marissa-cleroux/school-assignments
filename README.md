@@ -1,8 +1,7 @@
 # School Assignments
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
-### cryptogram 
-- [Demo](https://mc-cryptogram.herokuapp.com/) 
+### [cryptogram](https://mc-cryptogram.herokuapp.com/) 
 - [Github](https://github.com/marissa-cleroux/cryptogram) 
 
 Completed in Programming IV. Create a cryptogram game using python, web scraping, and bottle.
@@ -12,8 +11,7 @@ Completed in Programming IV. Create a cryptogram game using python, web scraping
 
 Completed in Programming IV. Created a command line task list using python.
 
-### kanbanTaskManager 
-- [Demo](https://kanban-task-manager.herokuapp.com/) 
+### [kanbanTaskManager](https://kanban-task-manager.herokuapp.com/) 
 - [Github - Node](https://github.com/marissa-cleroux/kanbanTaskManagerNode) 
 - [Github - PHP](https://github.com/marissa-cleroux/kanbanTaskManagerPHP)
 
@@ -24,8 +22,7 @@ Completed in Web Programming III. PHP task manager, node.js task viewer. Node se
 
 Completed in Programming III. Tasked to create a command line war card game using data structures and proper unit testing.
 
-### [nodeServer]
-- [Demo](https://mcleroux-node-server.herokuapp.com)
+### [nodeServer](https://mcleroux-node-server.herokuapp.com)
 - [Github](https://github.com/marissa-cleroux/nodeServer)
 
 Completed in Web Programming III. Node server "from scratch." Handling all requests without the use of frameworks that streamline the process. Uses templating (pug). Searches XML/JSON and returns matching records.
@@ -35,8 +32,7 @@ Completed in Web Programming III. Node server "from scratch." Handling all reque
 
 Completed in Programming III. Tasked to create a hangman game using linked lists, JFrame, and serializable objects.
 
-### [jsSolitaire]
-- [Demo](https://marissa-cleroux.github.io/schoolAssignments/jsSolitaire/game.html)
+### [jsSolitaire](https://marissa-cleroux.github.io/schoolAssignments/jsSolitaire/game.html)
 - [Github](https://github.com/marissa-cleroux/schoolAssignments/tree/master/jsSolitaire)
 
 Completed in Web Programming II. Solitaire made using javaScript; there is more to it but I have to adapt it to github.
@@ -46,8 +42,7 @@ Completed in Web Programming II. Solitaire made using javaScript; there is more 
 
 Completed in Programming II. Connect-N made using Java with CLI and GUI. 
 
-### [fakeCompanyWebsite]
-- [Demo](https://marissa-cleroux.github.io/schoolAssignments/fakeCompanyWebsite/index.html)
+### [fakeCompanyWebsite](https://marissa-cleroux.github.io/schoolAssignments/fakeCompanyWebsite/index.html)
 - [Github](https://github.com/marissa-cleroux/schoolAssignments/tree/master/fakeCompanyWebsite)
 
 Completed in Web Programming I. Static website for a fake company - first website I ever made!
