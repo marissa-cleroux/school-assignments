@@ -14,7 +14,7 @@ Completed in Programming IV. Created a command line task list using python.
 [Github - PHP](https://github.com/marissa-cleroux/kanbanTaskManagerPHP)
 Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch."
 
-### [warCommandLine]
+### warCommandLine
 [Github](https://github.com/marissa-cleroux/warCardGame/tree/master/src/war)
 Completed in Programming III. Tasked to create a command line war card game using data structures and proper unit testing.
 
@@ -22,7 +22,7 @@ Completed in Programming III. Tasked to create a command line war card game usin
 [Github](https://github.com/marissa-cleroux/nodeServer)
 Completed in Web Programming III. Node server "from scratch." Handling all requests without the use of frameworks that streamline the process. Uses templating (pug). Searches XML/JSON and returns matching records.
 
-### [hangman]
+### hangman
 [Github](https://github.com/marissa-cleroux/hangman)
 Completed in Programming III. Tasked to create a hangman game using linked lists, JFrame, and serializable objects.
 
@@ -30,7 +30,7 @@ Completed in Programming III. Tasked to create a hangman game using linked lists
 [Github](https://github.com/marissa-cleroux/schoolAssignments/tree/master/jsSolitaire)
 Completed in Web Programming II. Solitaire made using javaScript; there is more to it but I have to adapt it to github.
 
-### [connectN]
+### connectN
 [Github](https://github.com/marissa-cleroux/connectN)
 Completed in Programming II. Connect-N made using Java with CLI and GUI. 
 
