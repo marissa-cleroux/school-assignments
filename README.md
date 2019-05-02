@@ -1,7 +1,7 @@
 # School Assignments
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
-###[cryptogram](https://github.com/marissa-cleroux/cryptogram)
+### [cryptogram](https://github.com/marissa-cleroux/cryptogram)
 Completed in Programming IV. Create a cryptogram game using python, web scraping, and bottle.
 
 ### [toDoCommandLine](https://github.com/marissa-cleroux/commandLineToDoList)
