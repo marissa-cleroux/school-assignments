@@ -12,7 +12,7 @@ Completed in Programming IV. Created a command line task list using python.
 ### [kanbanTaskManager](https://kanban-task-manager.herokuapp.com/) 
 [Github - Node](https://github.com/marissa-cleroux/kanbanTaskManagerNode)  
 [Github - PHP](https://github.com/marissa-cleroux/kanbanTaskManagerPHP)  
-Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch."
+Completed in Web Programming III. PHP task manager, node.js task viewer. Node server "from scratch." Storing next task id in a txt file and all tasks stored in a JSON file.
 
 ### warCommandLine
 [Github](https://github.com/marissa-cleroux/warCardGame/tree/master/src/war)  
