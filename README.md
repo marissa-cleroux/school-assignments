@@ -45,5 +45,5 @@ Completed in Programming II. Connect-N made using Java with CLI and GUI.
 
 ### [fakeCompanyWebsite](https://marissa-cleroux.github.io/companyWebsite/index.html)
 
-[Github](https://github.com/marissa-cleroux/schoolAssignments/tree/master/fakeCompanyWebsite)  
-Completed in Web Programming I. Static website for a fake company - first website I ever made!
+[Github](https://github.com/marissa-cleroux/companyWebsite)  
+Completed in Web Programming I. Static, mobile-first website for a fake company - first website I ever made!
