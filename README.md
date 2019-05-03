@@ -33,9 +33,9 @@ Completed in Web Programming III. Node server "from scratch." Handling all reque
 [Github](https://github.com/marissa-cleroux/hangman)  
 Completed in Programming III. Tasked to create a hangman game using linked lists, JFrame, and serializable objects.
 
-### [jsSolitaire](https://marissa-cleroux.github.io/schoolAssignments/jsSolitaire/game.html)
+### [jsSolitaire](https://marissa-cleroux.github.io/solitaire/game.html)
 
-[Github](https://github.com/marissa-cleroux/schoolAssignments/tree/master/jsSolitaire)  
+[Github](https://github.com/marissa-cleroux/solitaire)  
 Completed in Web Programming II. Solitaire made using javaScript; there is more to it but I have to adapt it to github.
 
 ### connectN
