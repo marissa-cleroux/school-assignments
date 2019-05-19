@@ -32,7 +32,7 @@ Completed in Web Programming III. PHP task manager, node.js task viewer. Node se
 ## warCommandLine
 
 [Github](https://github.com/marissa-cleroux/warCardGame/tree/master/src/war)  
-Completed in Programming III. Tasked to create a command line war card game using data structures and proper unit testing.
+Completed in Programming III. Tasked to create a command line war card game using data structures and unit testing.
 
 ## [nodeServer](https://mcleroux-node-server.herokuapp.com)
 
