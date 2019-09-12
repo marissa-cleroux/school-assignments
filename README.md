@@ -2,7 +2,7 @@
 
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
-## [happyValleyKennelSystem](http://csdev.cegep-heritage.qc.ca/hvk/team1/)
+## happyValleyKennelSystem (link unavailble for now)
 System implemented to enable users to create and manage accounts, thus enabling them to create reservations for their pets. First group project in the program. Designed in Systems II and Database Management in first semester of second year. Implemented in Web Programming IV in second semester. We used C#.NET and web forms for the front-end, implemented in a layered architecture. Backend is Oracle.
 
 For Admin Demo:
