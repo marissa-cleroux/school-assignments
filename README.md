@@ -2,11 +2,17 @@
 
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
+## eCommerce
+
+[Github](https://github.com/marissa-cleroux/eCommerce)
+
+A simple e-commerce like web application implemented with ASP.NET Core and web APIs.
+
 ## weightLiftingTracker
 
 [Github](https://github.com/marissa-cleroux/weightLiftingTracker)
 
-An android application that allows users to easily create workouts and track the weight they're lifting for each exercise. 
+A java-android application that allows users to easily create workouts and track the weight they're lifting for each exercise. 
 
 ## happyValleyKennelSystem (link unavailble)
 System implemented to enable users to create and manage accounts, thus enabling them to create reservations for their pets. First group project in the program. Designed in Systems II and Database Management in first semester of second year. Implemented in Web Programming IV in second semester. We used C#.NET and web forms for the front-end, implemented in a layered architecture. Backend is Oracle.
