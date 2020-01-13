@@ -2,16 +2,13 @@
 
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
-## happyValleyKennelSystem (link unavailble for now)
+## weightLiftingTracker
+
+[Github](https://github.com/marissa-cleroux/weightLiftingTracker)
+An android application that allows users to easily create workouts and track the weight they're lifting for each exercise. 
+
+## happyValleyKennelSystem (link unavailble)
 System implemented to enable users to create and manage accounts, thus enabling them to create reservations for their pets. First group project in the program. Designed in Systems II and Database Management in first semester of second year. Implemented in Web Programming IV in second semester. We used C#.NET and web forms for the front-end, implemented in a layered architecture. Backend is Oracle.
-
-For Admin Demo:
-- Email: reed@hvk.ca
-- Password: 1234
-
-For User Demo:
-- Email: ppiper@gmail.com
-- Password: 1234
 
 ## [cryptogram](https://mc-cryptogram.herokuapp.com/)
 
