@@ -5,6 +5,7 @@ _Assignments I have completed in the Computer Science program at Heritage Colleg
 ## weightLiftingTracker
 
 [Github](https://github.com/marissa-cleroux/weightLiftingTracker)
+
 An android application that allows users to easily create workouts and track the weight they're lifting for each exercise. 
 
 ## happyValleyKennelSystem (link unavailble)
