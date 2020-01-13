@@ -4,8 +4,6 @@ _Assignments I have completed in the Computer Science program at Heritage Colleg
 
 ## eCommerce
 
-[Github](https://github.com/marissa-cleroux/eCommerce)
-
 A simple e-commerce like web application implemented with ASP.NET Core and web APIs.
 
 ## weightLiftingTracker
