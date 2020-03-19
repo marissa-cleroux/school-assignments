@@ -2,6 +2,12 @@
 
 _Assignments I have completed in the Computer Science program at Heritage College in Gatineau, QC._
 
+## [PEA](https://marissa-cleroux.github.io/PEA/index.html)
+
+[Github](https://github.com/marissa-cleroux/PEA)
+
+Program exit assessment required to graduate from the Computer Science program at Heritage College. Includes an overview of my experience gained while completing my final project, as well as other experience gained throughout my three years at Heritage College.
+
 ## eCommerce
 
 A simple e-commerce like web application implemented with ASP.NET Core and web APIs.
@@ -12,7 +18,7 @@ A simple e-commerce like web application implemented with ASP.NET Core and web A
 
 A java-android application that allows users to easily create workouts and track the weight they're lifting for each exercise. 
 
-## happyValleyKennelSystem (link unavailble)
+## happyValleyKennelSystem
 System implemented to enable users to create and manage accounts, thus enabling them to create reservations for their pets. First group project in the program. Designed in Systems II and Database Management in first semester of second year. Implemented in Web Programming IV in second semester. We used C#.NET and web forms for the front-end, implemented in a layered architecture. Backend is Oracle.
 
 ## [cryptogram](https://mc-cryptogram.herokuapp.com/)
